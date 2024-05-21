@@ -1,0 +1,18 @@
+{
+    "files.associations": {
+        "*.embeddedhtml": "html",
+        "*.cpp": "cpp",
+        "iostream": "cpp",
+        "chrono": "cpp",
+        "variant": "cpp",
+        "iosfwd": "cpp",
+        "unordered_map": "cpp",
+        "string": "cpp",
+        "deque": "cpp",
+        "vector": "cpp",
+        "*.tcc": "cpp",
+        "list": "cpp",
+        "unordered_set": "cpp",
+        "forward_list": "cpp"
+    },
+}
