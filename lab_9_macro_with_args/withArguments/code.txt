@@ -1,5 +1,0 @@
-Load A
-ABC 1 2
-Load B
-XYZ 3
-end

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-#define MAX_CODE 100
+#define MAX_CODE 100  // max number of intermmediate code that can be handled
 //t1 = a + b
 //t2 = t1 * c
 //t3 = t2 - d
@@ -15,8 +15,8 @@ typedef struct {
     char result[10];
 } IntermediateCode;
 
-IntermediateCode code[MAX_CODE];
-int codeCount = 0;
+IntermediateCode code[MAX_CODE]; // array to store instructions
+int codeCount = 0;               // to maintain ins count
 
 void readIntermediateCode() {
     // In a real scenario, you would read this from a file or input.
@@ -53,17 +53,17 @@ void generateMachineCode() {
     int addressCount = 0;
 
     // Function to get or allocate address
-    char* getAddress(char* var) {
+    char* getAddress(char* var) { // getAddress() allocates memory address to variables
         for (int i = 0; i < addressCount; i++) {
-            if (strcmp(address[i], var) == 0) {
-                return addressMapping[i];
+            if (strcmp(address[i], var) == 0) { // check if the variable already has allocates some address
+                return addressMapping[i];       // returns allocates address
             }
         }
-        strcpy(address[addressCount], var);
-        sprintf(addressMapping[addressCount], "%d", memoryAddress);
+        strcpy(address[addressCount], var); // copy the variable name to the address array
+        sprintf(addressMapping[addressCount], "%d", memoryAddress); //Converts the current memoryAddress (an integer) to a string and stores it in addressMapping at the current addressCount index.
         memoryAddress++;
         addressCount++;
-        return addressMapping[addressCount - 1];
+        return addressMapping[addressCount - 1];// Returns the newly allocated address for the variable.
     }
 
     for (int i = 0; i < codeCount; i++) {
@@ -82,8 +82,9 @@ void generateMachineCode() {
         }
     }
 }
-
-
+// opcode destination_register source_reg padding/immediate_value
+// dynamic: mem address and source register
+// static: all other
 
 
 

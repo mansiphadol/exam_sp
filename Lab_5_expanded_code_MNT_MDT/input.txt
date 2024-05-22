@@ -1,5 +1,0 @@
-.code
-ABC
-PQR
-ABC
-endp
